@@ -43,11 +43,15 @@ An Entity-Relationship Model represents the structure of the database with the h
  ### Components of ER Diagram
 You base an ER Diagram on three basic concepts:
 
+![image](https://user-images.githubusercontent.com/80267318/204767802-a6bbeca7-7367-45c6-9632-9bceb1136c46.png)
+
  #### Entities
  An entity can be either a living or non-living component.
+ 
  ![image](https://user-images.githubusercontent.com/80267318/204769508-7fd77101-3bc7-488e-bd23-5e6aad504737.png)
 
 - Weak Entity => An entity that makes reliance over another entity is called a weak entity
+
 ![image](https://user-images.githubusercontent.com/80267318/204769770-4c696309-3c18-4188-8e95-cc5e512f34f4.png)
 
 
@@ -56,34 +60,38 @@ An attribute exhibits the properties of an entity.
 
 
 - Key Attribute => Key attribute uniquely identifies an entity from an entity set. It underlines the text of a key attribute.
+
 ![image](https://user-images.githubusercontent.com/80267318/204770087-ffa276a7-3e50-41f9-98e4-6f135e044199.png)
 
 - Composite Attribute => An attribute that is composed of several other attributes is known as a composite attribute.
+
 ![image](https://user-images.githubusercontent.com/80267318/204770241-30994b89-3e6b-49d5-8e58-2642428ade8e.png)
 
 - Multivalued Attribute => Some attributes can possess over one value, those attributes are called multivalued attributes.
+
 ![image](https://user-images.githubusercontent.com/80267318/204770436-8626c951-4474-4a48-81a6-1f4a3e308609.png)
 
 - Derived Attribute => An attribute that can be derived from other attributes of the entity is known as a derived attribute.
+
 ![image](https://user-images.githubusercontent.com/80267318/204770552-730e7206-a005-4e2b-b0f6-8aad7d39609d.png)
 
 
 #### Relationships
 - One-to-One Relationships
+
 ![image](https://user-images.githubusercontent.com/80267318/204770991-763da9ee-ba4b-41d7-a713-6fe4e4323290.png)
 
 - One-to-Many Relationships
+
 ![image](https://user-images.githubusercontent.com/80267318/204770683-acf089dd-edfc-4dc8-b2f4-ec5bd52de838.png)
 
 - Many-to-One Relationships
+
 ![image](https://user-images.githubusercontent.com/80267318/204770738-c47d2079-8092-460c-9400-7d0336fb3755.png)
 
 - Many-to-Many Relationships
+
 ![image](https://user-images.githubusercontent.com/80267318/204770783-1c9cec05-f695-4705-ae9b-30c0cbaf29a8.png)
-
-##--------------------------------------
-
-![image](https://user-images.githubusercontent.com/80267318/204767802-a6bbeca7-7367-45c6-9632-9bceb1136c46.png)
 
 
 ## Types of Sql India
@@ -111,3 +119,81 @@ An attribute exhibits the properties of an entity.
 ## SQL Datatypes
 ![image](https://user-images.githubusercontent.com/80267318/204773960-369b5193-5193-4390-9f44-8c03e53f0a19.png)
 
+
+### Sql built in functions
+1. Show Databases => for getting all databases present.
+  #### Syntax => 
+  ```sql 
+     show databases;
+  ```
+
+2. use <db_name>  => this command is used for selecting the database for futher operations
+  #### Syntax =>
+  ```sql
+  // let db name = employee
+  use Employee
+  ````
+
+3. show tables  => this command is used for getting all the tables present in a database
+  #### Syntax =>
+  ```sql
+  // let db name = employee
+  use Employee
+  show TABLES:
+  ````
+  
+ 4. Describe <table name>  => this command is used for getting the structure/schema of table present in a database
+  #### Syntax =>
+  ```sql
+  // let db name = employee and table name => emp_data
+  use Employee
+  describe emp_data;
+  ````
+ 
+ 5. Distinct  => this keyword is used for fetch unique data of the selected attribute
+  #### Syntax =>
+  ```sql
+  // let db name = employee
+  use Employee
+ 
+ SELECT DISTINCT <attribute name> FROM <table name>;
+ 
+ // example
+  SELECT DISTINCT city FROM emp_data;
+  ````
+ 
+ 6. count()  => this function is used for getting the total count of the row from  selected attribute
+  #### Syntax =>
+  ```sql
+  // let db name = employee
+  use Employee
+ 
+ SELECT COUNT(<attribute name>) FROM <table name>;
+ 
+ // example
+  SELECT COUNT(name) FROM emp_data;
+  ````
+ 
+ 7. AS => SQL aliases are used to give a table, or a column in a table, a temporary name.
+  #### Syntax =>
+  ```sql
+  // let db name = employee
+  use Employee
+ 
+ SELECT COUNT(<attribute name>) AS <temp_name> FROM <table name>;
+ 
+ // example
+  SELECT COUNT(name) AS total_name FROM emp_data;
+  ````
+ 
+  8. SUM() => The SUM() function returns the total sum of a numeric column. 
+  #### Syntax =>
+  ```sql
+  // let db name = employee
+  use Employee
+ 
+ SELECT SUM(<attribute name>) AS <temp_name> FROM <table name>;
+ 
+ // example
+  SELECT SUM(salary) AS totalSalary FROM emp_data;
+  ````
