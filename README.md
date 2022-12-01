@@ -119,22 +119,41 @@ An attribute exhibits the properties of an entity.
 ## SQL Datatypes
 ![image](https://user-images.githubusercontent.com/80267318/204773960-369b5193-5193-4390-9f44-8c03e53f0a19.png)
 
+## Operators in Sql 
+ 
+#### Arithmetic Operators
+ - +, - ,/, *, %
+ 
+#### Comparison Operators
+ 1. <, <=
+ 2. >, >=
+ 3. =, !=
+ 4. !<, !>
+  
+#### Logical Operators
+ - Any
+ - All
+ - And
+ - OR/IN 
+ - Between
+ - Exists
+ - Not
 
 ### Sql built in functions
-1. Show Databases => for getting all databases present.
+#### Show Databases => for getting all databases present.
   #### Syntax => 
   ```sql 
      show databases;
   ```
 
-2. use <db_name>  => this command is used for selecting the database for futher operations
+#### use <db_name>  => this command is used for selecting the database for futher operations
   #### Syntax =>
   ```sql
   // let db name = employee
   use Employee
   ````
 
-3. show tables  => this command is used for getting all the tables present in a database
+#### show tables  => this command is used for getting all the tables present in a database
   #### Syntax =>
   ```sql
   // let db name = employee
@@ -142,15 +161,15 @@ An attribute exhibits the properties of an entity.
   show TABLES:
   ````
   
-4. Describe <table name>  => this command is used for getting the structure/schema of table present in a database
+#### Describe <table name>  => this command is used for getting the structure/schema of table present in a database
   #### Syntax =>
   ```sql
   // let db name = employee and table name => emp_data
   use Employee
   describe emp_data;
-  ````
+  ```
  
-5. Distinct  => this keyword is used for fetch unique data of the selected attribute
+#### Distinct  => this keyword is used for fetch unique data of the selected attribute
   #### Syntax =>
   ```sql
   // let db name = employee
@@ -160,9 +179,9 @@ An attribute exhibits the properties of an entity.
  
  // example
   SELECT DISTINCT city FROM emp_data;
-  ````
+  ```
  
-6. count()  => this function is used for getting the total count of the row from  selected attribute
+#### count()  => this function is used for getting the total count of the row from  selected attribute
   #### Syntax =>
   ```sql
   // let db name = employee
@@ -172,21 +191,21 @@ An attribute exhibits the properties of an entity.
  
  // example
   SELECT COUNT(name) FROM emp_data;
-  ````
+  ```
  
-7. AS => SQL aliases are used to give a table, or a column in a table, a temporary name.
+#### AS => SQL aliases are used to give a table, or a column in a table, a temporary name.
   #### Syntax =>
   ```sql
   // let db name = employee
   use Employee
  
- SELECT COUNT(<attribute name>) AS <temp_name> FROM <table name>;
+#### SELECT COUNT(<attribute name>) AS <temp_name> FROM <table name>;
  
  // example
   SELECT COUNT(name) AS total_name FROM emp_data;
-  ````
+  ```
  
-8. SUM() => The SUM() function returns the total sum of a numeric column. 
+#### SUM() => The SUM() function returns the total sum of a numeric column. 
   #### Syntax =>
   ```sql
   // let db name = employee
@@ -196,9 +215,9 @@ An attribute exhibits the properties of an entity.
  
  // example
   SELECT SUM(salary) AS totalSalary FROM emp_data;
-  ````
+  ```
  
-9. AVG() => The AVG() function returns the avrage of a numeric column. 
+ #### AVG() => The AVG() function returns the avrage of a numeric column. 
   #### Syntax =>
   ```sql
   // let db name = employee
@@ -208,21 +227,9 @@ An attribute exhibits the properties of an entity.
  
  // example
   SELECT AVG(salary) AS avgsalary FROM emp_data;
-  ````
- 
-10. AVG() => The AVG() function returns the avrage of a numeric column. 
-  #### Syntax =>
-  ```sql
-  // let db name = employee
-  use Employee
- 
- SELECT AVG(<attribute name>) AS <temp_name> FROM <table name>;
- 
- // example
-  SELECT AVG(salary) AS avgsalary FROM emp_data;
-  ````
-
- 11. WHERE CLAUSE =>  The Where Clause is used for applying conditions in a query.
+  ```
+  
+#### WHERE CLAUSE =>  The Where Clause is used for applying conditions in a query.
   #### Syntax =>
   ```sql
   // let db name = employee
@@ -234,27 +241,9 @@ An attribute exhibits the properties of an entity.
  1. SELECT * FROM emp_data WHERE age>22;
  
  2. SELECT Name, Gender, City FROM emp_data WHERE Gender = 'F';
-  ````
-## Operators in Sql 
+  ```
  
-  #### Arithmetic Operators
- - +, - ,/, *, %
- 
- #### Comparison Operators
- - <, <=
- - >, >=
- - =, !=
- - !<, !>
-  
-#### Logical Operators
- - Any
- - All
- - And
- - OR/IN 
- - Between
- - Exists
- 
- #### OR/IN => The OR operator displays a record if any of the conditions separated by OR is TRUE. The IN operator allows you to specify multiple values in a WHERE claus
+#### OR/IN => The OR operator displays a record if any of the conditions separated by OR is TRUE. The IN operator allows you to specify multiple values in a WHERE claus
  example - 
  ```sql 
  // Both work as same
@@ -269,13 +258,25 @@ An attribute exhibits the properties of an entity.
  SELECT * FROM emp_data WHERE doj BETWEEN '2001-01-01' AND '2010-01-01';
  ```
  
-#### AND =>The AND operator displays a record if all the conditions separated by AND are TRUE.
+#### AND => The AND operator displays a record if all the conditions separated by AND are TRUE.
  example - 
  ```sql 
  SELECT * FROM emp_data WHERE age>23 AND gender='M';
  ```
  
- #### Order By =>The ORDER BY keyword is used to sort the result-set in ascending or descending order.The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
+ #### NOT =>  The NOT operator displays a record if the condition(s) is NOT TRUE.
+ example - 
+ ```sql 
+ SELECT name, age, salary FROM emp_data WHERE NOT city = 'indore';
+ ```
+ 
+#### Combine Query of AND,OR and NOT
+example - 
+```sql
+ SELECT name, age, salary , city FROM emp_data WHERE Not city='Mumbai' AND ( city = 'Banglore' OR city ='ujjain');
+```
+ 
+#### Order By =>The ORDER BY keyword is used to sort the result-set in ascending or descending order.The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
  example - 
  ```sql 
  //ascending order
