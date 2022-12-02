@@ -46,19 +46,22 @@ You base an ER Diagram on three basic concepts:
 ![image](https://user-images.githubusercontent.com/80267318/204767802-a6bbeca7-7367-45c6-9632-9bceb1136c46.png)
 
  #### Entities
- An entity can be either a living or non-living component.
- 
- ![image](https://user-images.githubusercontent.com/80267318/204769508-7fd77101-3bc7-488e-bd23-5e6aad504737.png)
+ <details>
+ <summary><b> An entity can be either a living or non-living component.</b></summary><br>
+
+![image](https://user-images.githubusercontent.com/80267318/204769508-7fd77101-3bc7-488e-bd23-5e6aad504737.png)
 
 - Weak Entity => An entity that makes reliance over another entity is called a weak entity
 
 ![image](https://user-images.githubusercontent.com/80267318/204769770-4c696309-3c18-4188-8e95-cc5e512f34f4.png)
-
+ </details
+ 
 
 #### Attributes
-An attribute exhibits the properties of an entity. 
-
-
+ 
+ <details>
+ <summary><b>An attribute exhibits the properties of an entity.</b></summary><br>
+ 
 - Key Attribute => Key attribute uniquely identifies an entity from an entity set. It underlines the text of a key attribute.
 
 ![image](https://user-images.githubusercontent.com/80267318/204770087-ffa276a7-3e50-41f9-98e4-6f135e044199.png)
@@ -75,8 +78,13 @@ An attribute exhibits the properties of an entity.
 
 ![image](https://user-images.githubusercontent.com/80267318/204770552-730e7206-a005-4e2b-b0f6-8aad7d39609d.png)
 
+</details>
 
 #### Relationships
+
+ <details>
+ <summary><b>There are 4 types of relationship they are </b></summary><br>
+
 - One-to-One Relationships
 
 ![image](https://user-images.githubusercontent.com/80267318/204770991-763da9ee-ba4b-41d7-a713-6fe4e4323290.png)
@@ -93,8 +101,9 @@ An attribute exhibits the properties of an entity.
 
 ![image](https://user-images.githubusercontent.com/80267318/204770783-1c9cec05-f695-4705-ae9b-30c0cbaf29a8.png)
 
+</details>
 
-## Types of Sql India
+## Types of Sql 
 
 ### DDL - Data Defination Language
 - create
@@ -117,20 +126,33 @@ An attribute exhibits the properties of an entity.
   - rollback
   
 ## SQL Datatypes
+
+<details>
+<summary><b>Image</b></summary><br>
+
 ![image](https://user-images.githubusercontent.com/80267318/204773960-369b5193-5193-4390-9f44-8c03e53f0a19.png)
+
+</details>
 
 ## Operators in Sql 
  
-#### Arithmetic Operators
- - +, - ,/, *, %
+<details>
+ <summary><b> Arithmetic Operators</b></summary><br>
+
+ [+], [-], [/], [*], [%]
  
-#### Comparison Operators
+ </details>
+ 
+<details>
+ <summary><b> Comparison Operators </b></summary><br>
  1. <, <=
  2. >, >=
  3. =, !=
  4. !<, !>
+ </details>
   
-#### Logical Operators
+<details>
+ <summary><b> Logical Operators</b></summary><br>
  - Any
  - All
  - And
@@ -138,39 +160,65 @@ An attribute exhibits the properties of an entity.
  - Between
  - Exists
  - Not
-
-### Sql built in functions
-#### Show Databases => for getting all databases present.
+ </details>
+ 
+## SQL built in functions
+ 
+ <details>
+ <summary><b>Show Databases </b></summary><br>
+ 
+ This is used for listing all present databases.
+ 
   #### Syntax => 
   ```sql 
      show databases;
   ```
+</details>
 
-#### use <db_name>  => this command is used for selecting the database for futher operations
-  #### Syntax =>
+ <details>
+ <summary><b>use [db_name]  </b></summary><br>
+ 
+This command is used for selecting the database for futher operations
+ 
+ #### Syntax =>
   ```sql
   // let db name = employee
   use Employee
   ````
+ </details>
 
-#### show tables  => this command is used for getting all the tables present in a database
+<details>
+ <summary><b> show tables  </b></summary><br>
+  
+  this command is used for listing all the tables present in a database 
+  
   #### Syntax =>
   ```sql
   // let db name = employee
   use Employee
   show TABLES:
-  ````
+ ```
+</details>
   
-#### Describe <table name>  => this command is used for getting the structure/schema of table present in a database
-  #### Syntax =>
+<details>
+ <summary><b> Describe [table name] </b></summary><br> 
+ 
+ this command is used for getting the structure/schema of table present in a database
+ 
+ #### Syntax =>
   ```sql
   // let db name = employee and table name => emp_data
   use Employee
   describe emp_data;
   ```
+  </details>
  
-#### Distinct  => this keyword is used for fetch unique data of the selected attribute
-  #### Syntax =>
+<details>
+ <summary><b> Distinct  </b></summary><br>
+ 
+ this keyword is used for fetch unique data of the selected attribute
+ 
+ #### Syntax =>
   ```sql
   // let db name = employee
   use Employee
@@ -180,9 +228,14 @@ An attribute exhibits the properties of an entity.
  // example
   SELECT DISTINCT city FROM emp_data;
   ```
+   </details>
  
-#### count()  => this function is used for getting the total count of the row from  selected attribute
-  #### Syntax =>
+<details>
+ <summary><b> count()  </b></summary><br>
+ 
+ this function is used for getting the total count of the row from  selected attribute
+ 
+ #### Syntax =>
   ```sql
   // let db name = employee
   use Employee
@@ -192,21 +245,31 @@ An attribute exhibits the properties of an entity.
  // example
   SELECT COUNT(name) FROM emp_data;
   ```
+  </details>
+  
+<details>
+ <summary><b> AS </b></summary><br>
  
-#### AS => SQL aliases are used to give a table, or a column in a table, a temporary name.
-  #### Syntax =>
+ SQL aliases are used to give a table, or a column in a table, a temporary name.
+ 
+ #### Syntax =>
   ```sql
   // let db name = employee
   use Employee
  
-#### SELECT COUNT(<attribute name>) AS <temp_name> FROM <table name>;
+ SELECT COUNT(<attribute name>) AS <temp_name> FROM <table name>;
  
  // example
   SELECT COUNT(name) AS total_name FROM emp_data;
   ```
+  </details>
  
-#### SUM() => The SUM() function returns the total sum of a numeric column. 
-  #### Syntax =>
+<details>
+ <summary><b> SUM()</b></summary><br>
+ 
+ The SUM() function returns the total sum of a numeric column. 
+ 
+ #### Syntax =>
   ```sql
   // let db name = employee
   use Employee
@@ -216,9 +279,14 @@ An attribute exhibits the properties of an entity.
  // example
   SELECT SUM(salary) AS totalSalary FROM emp_data;
   ```
+  </details>
+  
+ <details>
+ <summary><b> AVG() </b></summary><br>
  
- #### AVG() => The AVG() function returns the avrage of a numeric column. 
-  #### Syntax =>
+ The AVG() function returns the avrage of a numeric column. 
+ 
+ #### Syntax =>
   ```sql
   // let db name = employee
   use Employee
@@ -228,9 +296,14 @@ An attribute exhibits the properties of an entity.
  // example
   SELECT AVG(salary) AS avgsalary FROM emp_data;
   ```
-  
-#### WHERE CLAUSE =>  The Where Clause is used for applying conditions in a query.
-  #### Syntax =>
+   </details>
+   
+<details>
+ <summary><b> WHERE CLAUSE </b></summary><br>
+ 
+ The Where Clause is used for applying conditions in a query.
+ 
+ #### Syntax =>
   ```sql
   // let db name = employee
   use Employee
@@ -242,8 +315,14 @@ An attribute exhibits the properties of an entity.
  
  2. SELECT Name, Gender, City FROM emp_data WHERE Gender = 'F';
   ```
+  
+  </details>
  
-#### OR/IN => The OR operator displays a record if any of the conditions separated by OR is TRUE. The IN operator allows you to specify multiple values in a WHERE claus
+<details>
+ <summary><b> OR/IN </b></summary><br>
+ 
+ The OR operator displays a record if any of the conditions separated by OR is TRUE. The IN operator allows you to specify multiple values in a WHERE claus
+ 
  example - 
  ```sql 
  // Both work as same
@@ -251,33 +330,57 @@ An attribute exhibits the properties of an entity.
  
    SELECT Name, Gender, City FROM emp_data WHERE city IN ('indore', 'pune');
  ```
+  </details>
  
-#### Between => The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates. The BETWEEN operator is inclusive: begin and end values are included. 
+<details>
+ <summary><b> Between </b></summary><br>
+ 
+ The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates. The BETWEEN operator is inclusive: begin and end values are included. 
+ 
  example - 
  ```sql 
  SELECT * FROM emp_data WHERE doj BETWEEN '2001-01-01' AND '2010-01-01';
  ```
+  </details>
  
-#### AND => The AND operator displays a record if all the conditions separated by AND are TRUE.
+<details>
+ <summary><b> AND </b></summary><br>
+ 
+ The AND operator displays a record if all the conditions separated by AND are TRUE.
+ 
  example - 
  ```sql 
  SELECT * FROM emp_data WHERE age>23 AND gender='M';
  ```
+  </details>
+  
+ <details>
+ <summary><b> NOT </b></summary><br>
  
- #### NOT =>  The NOT operator displays a record if the condition(s) is NOT TRUE.
+ The NOT operator displays a record if the condition(s) is NOT TRUE.
+ 
  example - 
  ```sql 
  SELECT name, age, salary FROM emp_data WHERE NOT city = 'indore';
  ```
  
-#### Combine Query of AND,OR and NOT
+  </details>
+ 
+<details>
+ <summary><b> Combine Query of AND,OR and NOT </b></summary><br>
+ 
 example - 
 ```sql
  SELECT name, age, salary , city FROM emp_data WHERE Not city='Mumbai' AND ( city = 'Banglore' OR city ='ujjain');
 ```
- 
-#### Order By =>The ORDER BY keyword is used to sort the result-set in ascending or descending order.The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
- example - 
+  </details>
+  
+<details>
+ <summary><b> Order By  </b></summary><br>
+
+The ORDER BY keyword is used to sort the result-set in ascending or descending order.The ORDER BY keyword sorts the records in ascending order by default. To sort the records in descending order, use the DESC keyword.
+
+example - 
  ```sql 
  //ascending order
  SELECT * FROM emp_data  WHERE age>23 AND gender='M' ORDER BY salary ASC;
@@ -286,5 +389,5 @@ example -
 SELECT * FROM emp_data  WHERE age>23 AND gender='M' ORDER BY salary DESC;
  ```
  
- 
+  </details>
  
