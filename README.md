@@ -162,8 +162,9 @@ You base an ER Diagram on three basic concepts:
  - Not
  </details>
  
-## SQL built in functions
- 
+ ## SQL built in functions 
+<details>
+ <summary><h2> Functions </h2></summary><br>
  <details>
  <summary><b>Show Databases </b></summary><br>
  
@@ -495,6 +496,18 @@ SELECT (80/10) AS division;
 SELECT (10*80) AS Multiplication;
 
  ```
- 
   </details>
  
+
+### Strings Function
+  
+<details><summary><b>upper()/ucase()</b></summary><br> </details>
+<details><summary><b>lower()/lcase()</b></summary><br></details>
+<details><summary><b>character_length()/char_length()</b></summary><br></details>
+<details><summary><b>concat()</b></summary><br></details>
+<details><summary><b>reverse()</b></summary><br></details>
+<details><summary><b>length()</b></summary><br></details>
+<details><summary><b>ltrim()/rtrim()/trim </b></summary><br></details>
+<details><summary><b>position()</b></summary><br></details>
+    
+ </details>
