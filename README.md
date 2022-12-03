@@ -390,4 +390,111 @@ SELECT * FROM emp_data  WHERE age>23 AND gender='M' ORDER BY salary DESC;
  ```
  
   </details>
+  
+  
+  <details>
+ <summary><b> MIN/MAX  </b></summary><br>
+
+The MIN() function returns the smallest value of the selected column.
+The MAX() function returns the largest value of the selected column.
+
+example - 
+ ```sql 
+ //min
+ SELECT name, MIN(age) as min_age from emp_data;
+ 
+ SELECT name, age as min_age from emp_data WHERE age = (SELECT MIN(age) from emp_data);
+
+ //max
+SELECT name, MAX(age) as max_age from emp_data;
+
+SELECT name, age as max_age from emp_data WHERE age = (SELECT MAX(age) from emp_data);
+ ```
+ 
+  </details>
+  
+  
+   <details>
+ <summary><b> Repeat  </b></summary><br>
+ 
+ it is used for repeation.
+
+example - 
+ ```sql 
+ //syntax
+  SELECT REPEAT(<repeat_name>, how many times you want to repeat) as repeated_name;
+ 
+ SELECT REPEAT("aman", 10) as repeated_name;
+ ```
+ 
+  </details>
+  
+  
+<details>
+ <summary><b> Date  </b></summary><br>
+
+<details>
+ <summary><b> curDate() / CURRENT_DATE </b></summary><br>
+ 
+ this is used for getting the current date.
+ 
+example - 
+ ```sql 
+ //syntax
+SELECT CURRENT_DATE as date;
+
+SELECT curDate() as date;
+ ```
+  </details>
+  
+  <details>
+ <summary><b> curTime() / CURRENT_TIME </b></summary><br>
+ 
+ this is used for getting the current Time.
+ 
+example - 
+ ```sql 
+ //syntax
+SELECT CURRENT_TIME as date;
+
+SELECT curTime() as date;
+ ```
+  </details>
+  
+  <details>
+ <summary><b> now() / CURRENT_TIMESTAMP </b></summary><br>
+ 
+ this is used for getting the current date and time.
+ 
+example - 
+ ```sql 
+ //syntax
+SELECT CURRENT_TIMESTAMP as date;
+
+SELECT now() as date;
+ ```
+  </details>
+ 
+  </details>
+  
+  <details>
+ <summary><b> Math Operation  </b></summary><br>
+
+example - 
+ ```sql 
+ // addition
+ SELECT (10+80) AS Addition;
+ 
+ //subtraction
+SELECT (10-80) AS Subtraction;
+
+//divide
+SELECT (80/10) AS division;
+
+//mutiply
+SELECT (10*80) AS Multiplication;
+
+ ```
+ 
+  </details>
  
