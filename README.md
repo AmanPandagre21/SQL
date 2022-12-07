@@ -516,13 +516,117 @@ SELECT (10*80) AS Multiplication;
 
 ### Strings Function
   
-<details><summary><b>upper()/ucase()</b></summary><br> </details>
-<details><summary><b>lower()/lcase()</b></summary><br></details>
-<details><summary><b>character_length()/char_length()</b></summary><br></details>
-<details><summary><b>concat()</b></summary><br></details>
-<details><summary><b>reverse()</b></summary><br></details>
-<details><summary><b>length()</b></summary><br></details>
-<details><summary><b>ltrim()/rtrim()/trim </b></summary><br></details>
-<details><summary><b>position()</b></summary><br></details>
+<details><summary><b>upper()/ucase()</b></summary><br> 
+ Convert words into uppercase
+ 
+ ```sql 
+ 
+      SELECT UPPER("aman pandagre") as adminName;
+      SELECT UCASE("aman pandagre") as adminName;
+ 
+ ```
+ 
+ </details>
+<details><summary><b>lower()/lcase()</b></summary><br>
+   Convert words into lowercase
+ 
+ ```sql 
+ 
+       SELECT LOWER("AMAN PANDAGRE") as adminName;
+       SELECT LCASE("AMAN PANDAGRE") as adminName;
+ 
+ ```
+ 
+</details>
+<details><summary><b>character_length()/char_length()</b></summary><br>
+     Returns length of chracter
+ 
+ ```sql 
+ 
+      SELECT CHARACTER_LENGTH("AMAN PANDAGRE") as adminName;
+      SELECT CHAR_LENGTH("AMAN PANDAGRE") as adminName;
+ 
+ ```
+ 
+ </details>
+<details><summary><b>concat()</b></summary><br>
     
+      Concat the two strings
+ 
+ ```sql 
+ 
+     SELECT CONCAT("AM", "AN") as adminName;
+ 
+ ```
+ 
+</details>
+<details><summary><b>reverse()</b></summary><br>
+    
+  REVERSE the strings
+ 
+ ```sql 
+ 
+     SELECT REVERSE("AMAN PANDAGRE") as adminName;
+ 
+ ```
+ 
+ </details>
+<details><summary><b>length()</b></summary><br>
+
+  Return the length of String
+ 
+ ```sql 
+ 
+     SELECT LENGTH("I just grind it..") as Len;
+ 
+ ```
+ 
+</details>
+<details><summary><b>ltrim()/rtrim()/trim </b></summary><br>
+
+   ltrim means left trim its trims the left side of String.<br>
+   rtrim means right trim its trims the right side of String.<br>
+   trim  its trims the left and right both side of String
+ 
+ ```sql 
+
+ //ltrim
+    SELECT LTRIM("         I just grind it..") as Len;
+//rtrim
+    SELECT RTRIM("         I just grind it..           ") as Len;
+//trim
+    SELECT TRIM("         I just grind it..           ") as Len;
+ 
+ ```
+ 
+</details>
+<details><summary><b>position()</b></summary><br>
+    
+      Return the position of String
+ 
+ ```sql 
+ 
+     SELECT POSITION("21" IN "aman PANDAGRE21");
+ 
+ ```
+  </details>
+ </details>
+
+ <details>
+  <summary>Group By / Having</summary><br>
+  
+ The GROUP BY statement groups rows that have the same values into summary rows, like "find the number of customers in each country".
+
+The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), MIN(), SUM(), AVG()) to group the result-set by one or more columns.
+  
+  AND
+  
+ The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
+ 
+ ```sql
+  
+  
+  
+  ```
+  
  </details>
