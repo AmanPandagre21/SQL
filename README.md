@@ -24,6 +24,9 @@ SQL is a standard language for storing, manipulating and retrieving data in data
  
 ![image](https://user-images.githubusercontent.com/80267318/204763077-68928869-8128-4d64-bbf5-4ed9817f9f8e.png)
 
+<details>
+ <summary><h2>ER Diagram</h2></summary><br>
+ 
 ## ER Diagram
 An Entity Relationship Diagram is a diagram that represents relationships among entities in a database. It is commonly known as an ER Diagram.
 
@@ -56,6 +59,7 @@ You base an ER Diagram on three basic concepts:
 ![image](https://user-images.githubusercontent.com/80267318/204769770-4c696309-3c18-4188-8e95-cc5e512f34f4.png)
  </details
  
+
 
 #### Attributes
  
@@ -103,6 +107,8 @@ You base an ER Diagram on three basic concepts:
 
 </details>
 
+ </details>
+
 ## Types of Sql 
 
 ### DDL - Data Defination Language
@@ -138,28 +144,37 @@ You base an ER Diagram on three basic concepts:
  
 <details>
  <summary><b> Arithmetic Operators</b></summary><br>
-
- [+], [-], [/], [*], [%]
- 
+<ul>
+ <li>[+]</li> 
+ <li>[-]</li>
+ <li>[/]</li> 
+ <li>[*]</li> 
+ <li>[%}</li>
+</ul>
  </details>
  
 <details>
  <summary><b> Comparison Operators </b></summary><br>
- 1. <, <=
- 2. >, >=
- 3. =, !=
- 4. !<, !>
+ <ul>
+ <li><, <=</li> 
+ <li> >, >=</li>
+ <li> =, !=</li> 
+ <li>!<, !></li> 
+</ul>
  </details>
   
 <details>
  <summary><b> Logical Operators</b></summary><br>
- - Any
- - All
- - And
- - OR/IN 
- - Between
- - Exists
- - Not
+ <ul>
+ <li>Any</li> 
+ <li>All</li>
+ <li>And</li> 
+ <li>OR/IN </li> 
+ <li>Between</li>
+ <li>Exists</li>
+  <li>Not</li>
+</ul>
+
  </details>
  
  ## SQL built in functions 
