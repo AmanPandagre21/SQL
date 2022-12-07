@@ -661,3 +661,133 @@ The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), M
   ```
   
  </details>
+ 
+<details>
+  <summary><h3> JOINS </h3></summary><br>
+   
+   A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+   We can join more than one tables 
+   there are Five types of joins - 
+   
+   <ul>
+    <li>Inner Join</li>
+    <li>Right Join</li>
+    <li>Left Join</li>
+    <li>Full Join</li>
+    <li>Self Join</li>
+   </ul>
+   
+ <details><summary><h5>Inner Join</h5></summary>
+   
+   The INNER JOIN keyword selects records that have matching values in both tables.
+   Note: The INNER JOIN keyword selects all rows from both tables as long as there is a match between the columns. If     there are records in the "table1" table that do not have matches in "table2", these orders will not be shown!
+
+   ![image](https://user-images.githubusercontent.com/80267318/206286434-a2bc37c4-f152-49c0-9755-07b7dedda24b.png)
+
+   ```sql
+     
+   //Syntax 
+   
+    SELECT column_name(s)
+    FROM table1
+    INNER JOIN table2
+    ON table1.column_name = table2.column_name;
+   
+   //example
+   
+   ```
+    
+ </details>
+   
+   
+ <details><summary><h5>Right Join</h5></summary>
+   
+  The RIGHT JOIN keyword returns all records from the right table (table2), and the matching records from the left     table (table1). The result is 0 records from the left side, if there is no match.
+     
+   ![image](https://user-images.githubusercontent.com/80267318/206287406-8560bf45-27cf-43cd-a0db-591f2429f148.png)
+
+     Note: The RIGHT JOIN keyword returns all records from the right table (table2), even if there are no matches           in the left table (table1).<br>
+      In some databases RIGHT JOIN is called RIGHT OUTER JOIN.
+     
+   ```sql
+     
+   //Syntax 
+   
+    SELECT column_name(s)
+    FROM table1
+    RIGHT JOIN table2
+    ON table1.column_name = table2.column_name;
+   
+   //example
+   
+   ```
+    
+ </details>
+   
+   
+ <details><summary><h5>Left Join</h5></summary>
+   
+   The LEFT JOIN keyword returns all records from the left table (table1), and the matching records from the right      table (table2). The result is 0 records from the right side, if there is no match.
+   Note: The LEFT JOIN keyword returns all records from the left table (Customers), even if there are no matches in      the right table (Orders).<br>
+   In some databases LEFT JOIN is called LEFT OUTER JOIN.
+
+   ![image](https://user-images.githubusercontent.com/80267318/206287983-af44dc67-a879-4280-b15f-f4ac0c2968ec.png)
+
+   ```sql
+     
+   //Syntax 
+   
+     SELECT column_name(s)
+     FROM table1
+     LEFT JOIN table2
+     ON table1.column_name = table2.column_name;
+   
+   //example
+   
+   ```
+    
+ </details>
+   
+ <details><summary><h5>Full Join</h5></summary>
+   
+   The FULL OUTER JOIN keyword returns all records when there is a match in left (table1) or right (table2) table        records. FULL OUTER JOIN and FULL JOIN are the same.
+   Note: The FULL OUTER JOIN keyword returns all matching records from both tables whether the other table matches or    not. So, if there are rows in "Customers" that do not have matches in "Orders", or if there are rows in "Orders"      that do not have matches in "Customers", those rows will be listed as well.<br>
+   FULL OUTER JOIN can potentially return very large result-sets!
+
+   ![image](https://user-images.githubusercontent.com/80267318/206288426-f93fcd0a-b6cc-4deb-b00a-c8de33a1a37c.png)
+     
+   ```sql
+     
+   //Syntax 
+   
+    SELECT column_name(s)
+    FROM table1
+    FULL OUTER JOIN table2
+    ON table1.column_name = table2.column_name
+    WHERE condition;
+   
+   //example
+   
+   ```
+    
+ </details>
+   
+ <details><summary><h5>Self Join</h5></summary>
+   
+   A self join is a regular join, but the table is joined with itself.
+
+   ```sql
+     
+   //Syntax 
+   
+    SELECT column_name(s)
+    FROM table1 T1, table1 T2
+    WHERE condition;
+   
+   //example
+   
+   ```
+    
+ </details>
+    
+</details
