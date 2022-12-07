@@ -179,7 +179,7 @@ You base an ER Diagram on three basic concepts:
  
  ## SQL built in functions 
 <details>
- <summary><h2> Functions </h2></summary><br>
+ <summary><h3> Functions </h3></summary><br>
  <details>
  <summary><b>Show Databases </b></summary><br>
  
@@ -613,7 +613,7 @@ SELECT (10*80) AS Multiplication;
  </details>
 
  <details>
-  <summary>Group By / Having</summary><br>
+  <summary><h3>Group By / Having</h3></summary><br>
   
  The GROUP BY statement groups rows that have the same values into summary rows, like "find the number of customers in each country".
 
@@ -625,8 +625,39 @@ The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), M
  
  ```sql
   
+    use sql_learn;
   
+  //Group By
   
+    // get each departmant average age and total salary
+    SELECT dept, ROUND(AVG(age)) AS avg_age, SUM(salary) AS sly FROM employees GROUP BY dept;
+    
+    //select how many employees work on each city
+    SELECT COUNT(Emp_Id) AS total_Emp , city FROM employees GROUP BY city ORDER BY COUNT(Emp_Id) DESC;
+  
+    //select how many employees join on each year
+    SELECT YEAR(doj) as year, COUNT(Emp_Id) as total_emp_join FROM employees GROUP BY YEAR(doj) ORDER BY YEAR(doj) DESC;
+  
+    SELECT product_id, SUM(sell_price * quantity) AS revenue FROM sales GROUP BY product_id;
+
+  //Having
+  
+      // return the group of department whose average salary is greater then 75000
+      SELECT dept, AVG(salary) AS avg_salary FROM employees GROUP BY dept HAVING AVG(salary) > 75000;
+  
+      // return the group of city whose total salary is greater then 200000
+      SELECT city, SUM(salary) AS total_salary FROM employees GROUP BY city HAVING SUM(salary) > 200000;
+  
+      // return the group of department whose total employees is greater then 2
+      SELECT dept, COUNT(*) AS total_emp FROM employees GROUP BY dept HAVING COUNT(*) > 2;
+  
+      // return the group of department whose total employees is greater then 2 and they not belong to houston city
+      SELECT dept, COUNT(*) AS total_emp FROM employees WHERE city != "Houston" GROUP BY dept HAVING COUNT(*) > 2;
+  
+      // return the group of department whose average salary is greater then 75000 
+     // using aggrigate function in having clause that is not used in select
+      SELECT dept, COUNT(*) AS total_emp FROM employees GROUP BY dept HAVING AVG(salary) > 75000;
+   
   ```
   
  </details>
