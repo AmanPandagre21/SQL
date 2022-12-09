@@ -807,4 +807,45 @@ The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), M
     
  </details>
     
-</details
+ </details>
+ 
+  <details><summary><h2>Su Queries </h2></summary>
+   
+   <h5> A subquery is select query that is enclosed inside other query. The inner select query is usually used to determine the results of the outer select query</h5>
+   
+   ![image](https://user-images.githubusercontent.com/80267318/206678672-f22f4f26-16d9-4b9f-b4f3-9cfa32a60992.png)
+   
+   ```sql
+   
+   // Subquery with select statement //
+   
+   // Write a sql query to display department with maximum salary from employees table //
+   
+   SELECT dept FROM employees WHERE salary = (SELECT MAX(salary) FROM employees);
+   
+   SELECT emp_name, dept, salary FROM employees WHERE salary < (SELECT AVG(salary) FROM employees);
+                                                                      
+   // Subquery with insert statement //
+   
+    INSERT INTO orders
+    SELECT prod_id, item, sell_price 
+    FROM products 
+    WHERE prod_id IN (SELECT prod_id FROM products WHERE sell_price > 1000);   
+   
+   // Subquery with Update statement //
+   
+   UPDATE employees SET salary = salary *0.45 WHERE age IN (SELECT age from employees where age >27);
+   
+   // Subquery with Delete statement //
+   
+    Delete FROM employees WHERE age IN (SELECT age from employees where age >= 27);
+   
+   // two different tables //
+   
+   SELECT productcode, productname, msrp from products WHERE productcode in (SELECT productcode from orderdetails where priceeach <100);
+   
+   ```
+
+   <details>
+ 
+ 
