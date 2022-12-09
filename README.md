@@ -695,6 +695,15 @@ The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), M
    
    //example
    
+   SELECT * FROM cricket AS c INNER JOIN football AS f ON c.name = f.name;
+   Or
+   SELECT * FROM cricket AS c INNER JOIN football AS f  USING(name); 
+   
+   SELECT productcode, productname, textdescription FROM products INNER JOIN productlines USING(productline);
+   
+   //three table join
+   SELECT o.ordernumber, o.status, p.productname, SUM(quantityordered * priceeach) AS revenue FROM orders AS o INNER JOIN orderdetails AS od ON o.ordernumber=od.ordernumber INNER JOIN products AS p ON p.productcode = od.productcode GROUP BY ordernumber;
+   
    ```
     
  </details>
@@ -720,6 +729,8 @@ The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), M
    
    //example
    
+   SELECT c.customername, c.phone, e.employeenumber, e.email FROM customers AS c RIGHT JOIN employees AS e ON salesrepemployeenumber=employeenumber ORDER BY              employeenumber;
+   
    ```
     
  </details>
@@ -743,6 +754,8 @@ The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), M
      ON table1.column_name = table2.column_name;
    
    //example
+   
+   SELECT c.customernumber, c.customername, status, ordernumber FROM customers AS c LEFT JOIN orders AS o ON c.customernumber = o.customernumber WHERE o.ordernumber IS null;   
    
    ```
     
@@ -768,6 +781,8 @@ The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), M
    
    //example
    
+   SELECT Customers.CustomerName, Orders.OrderID FROM Customers FULL JOIN Orders ON Customers.CustomerID=Orders.CustomerID ORDER BY Customers.CustomerName;
+   
    ```
     
  </details>
@@ -785,6 +800,8 @@ The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), M
     WHERE condition;
    
    //example
+   
+   SELECT concat(m.lastname, ',' , m.firstname) as manager , concat(e.lastname, ',' , e.firstname) as employees FROM employees AS e INNER JOIN employees AS m ON m.employeenumber =  e.reportsto ORDER BY manager;
    
    ```
     
