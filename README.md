@@ -809,7 +809,7 @@ The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), M
     
  </details>
  
-  <details><summary><h2>Su Queries </h2></summary>
+  <details><summary><h2>Sub Queries </h2></summary>
    
    <h5> A subquery is select query that is enclosed inside other query. The inner select query is usually used to determine the results of the outer select query</h5>
    
@@ -848,4 +848,38 @@ The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), M
 
    <details>
  
+<details>
+ <summary><h2>Triggers</h2></summary>
+
+ <h5>A trigger is a user-defined SQL command that is invoked automatically in response to an event such as insert, delete or update</h5>
  
+ ```sql
+ 
+ //syntax 
+ 
+ create Trigger
+ trigger_name, trigger_time, trigger_event on table_name for each row
+ Begin
+ ...
+ End;
+ 
+ // trigger_time = Before, After
+ // trigger_event = Insert, Update, Delete 
+ 
+ // example
+ 
+ //// before insert trigger
+ 
+ ```
+ 
+</details>
+
+<details>
+ <summary><h2>Stored Procedures</h2></summary>
+ 
+</details>
+   
+<details>
+ <summary><h2>Views</h2></summary>
+ 
+</details>
